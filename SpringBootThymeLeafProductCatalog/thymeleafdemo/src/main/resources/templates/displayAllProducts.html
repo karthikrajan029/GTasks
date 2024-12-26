@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Display  All Products</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container" align="center">
+    <h5>Product List</h5>
+
+    <table style="width: 80%"
+           class="table table-bordered table-responsive-md">
+
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="product:${productDtoList}">
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.productPrice}"></td>
+            <td th:text="${product.productCategory}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <a th:href="@{/}">Home</a>
+</div>
+</body>
+</html>
